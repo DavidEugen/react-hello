@@ -1,36 +1,32 @@
 function LikeButton() {
-    const [liked, setLiked] = React.useState(false);
-    const text = liked ? '좋아요 취소' : '좋아요';
-    // return React.createElement(
-    //     'button',   // keyof ReactHTML
-    //     { onClick: () => setLiked(!liked) }, // ...children : 이하 children 속성
-    //     text,
-    // );
-    return <button onClick={() => setLinked(!liked)}>{text}</button>;
+  const [liked, setLiked] = React.useState(false);
+  const text = liked ? '좋아요 취소' : '좋아요'; // return React.createElement(
+  //     'button',   // keyof ReactHTML
+  //     { onClick: () => setLiked(!liked) }, // ...children : 이하 children 속성
+  //     text,
+  // );
+
+  return /*#__PURE__*/React.createElement("button", {
+    onClick: () => setLinked(!liked)
+  }, text);
 }
 
 function Container() {
-    const [count, setCount] = React.useState(false);
-    return (
-        <div>
-            <LikeButton />
-            <div>
-                <span>현재 카운트: </span>
-                <span style={{ marginRight: 10 }}>{count}</span>
-                <button onClick={() => setCount(count + 1)}>증가</button>
-                <button onClick={() => setCount(count - 1)}>감소</button>
-            </div>
-        </div>
-
-    )
+  const [count, setCount] = React.useState(false);
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(LikeButton, null), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", null, "\uD604\uC7AC \uCE74\uC6B4\uD2B8: "), /*#__PURE__*/React.createElement("span", {
+    style: {
+      marginRight: 10
+    }
+  }, count), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setCount(count + 1)
+  }, "\uC99D\uAC00"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setCount(count - 1)
+  }, "\uAC10\uC18C")));
 }
 
 const domContanier = document.getElementById('root');
-ReactDOM.render(React.createElement(Container), domContainer);
-
-//const domContainer = document.getElementById('root');
+ReactDOM.render(React.createElement(Container), domContainer); //const domContainer = document.getElementById('root');
 //ReactDOM.render(React.createElement(LikeButton), domContainer); // ReactDom , 스크림트 실행될때 전역변수로 노출된다.
-
 // 방법 1
 // const domContainer1 = document.getElementById('root1');
 // ReactDOM.render(React.createElement(LikeButton), domContainer1); // ReactDom , 스크림트 실행될때 전역변수로 노출된다.
@@ -38,7 +34,6 @@ ReactDOM.render(React.createElement(Container), domContainer);
 // ReactDOM.render(React.createElement(LikeButton), domContainer2); 
 // const domContainer3 = document.getElementById('root3');
 // ReactDOM.render(React.createElement(LikeButton), domContainer3); 
-
 // 방법 2
 //const domContainer = document.getElementById('root');
 //ReactDOM.render(
