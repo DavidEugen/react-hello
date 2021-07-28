@@ -25,7 +25,7 @@ function Container() {
     )
 }
 
-const domContanier = document.getElementById('root');
+const domContainer = document.getElementById('root');
 ReactDOM.render(React.createElement(Container), domContainer);
 
 //const domContainer = document.getElementById('root');

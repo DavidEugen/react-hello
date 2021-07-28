@@ -24,7 +24,7 @@ function Container() {
   }, "\uAC10\uC18C")));
 }
 
-const domContanier = document.getElementById('root');
+const domContainer = document.getElementById('root');
 ReactDOM.render(React.createElement(Container), domContainer); //const domContainer = document.getElementById('root');
 //ReactDOM.render(React.createElement(LikeButton), domContainer); // ReactDom , 스크림트 실행될때 전역변수로 노출된다.
 // 방법 1
